@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'FTProgressView_Example' do
+  pod 'FTProgressView', :path => '../'
+
+  target 'FTProgressView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
