@@ -56,7 +56,7 @@ class SanuView: UIView {
         ellipseShapeLayer.lineCap = kCALineCapRound
         ellipseShapeLayer.strokeEnd = progress
         ellipseShapeLayer.fillColor = backgroundColor?.cgColor
-        let transform = CGAffineTransform(rotationAngle: CGFloat( -M_PI_2))
+        let transform = CGAffineTransform(rotationAngle: CGFloat( Double.pi/2))
         
         let transl = CGAffineTransform(translationX: 0, y: rect.height)
         ellipseShapeLayer.setAffineTransform(transform.concatenating(transl))
