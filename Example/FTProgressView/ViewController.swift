@@ -10,10 +10,11 @@ import UIKit
 import FTProgressView
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        (view as? SanuView)?.progress = 0.6
+        (view as? SanuView)?.animate()
     }
 }
 

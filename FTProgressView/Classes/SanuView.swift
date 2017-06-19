@@ -2,20 +2,20 @@
 import Foundation
 import UIKit
 
-class SanuView: UIView {
+open class SanuView: UIView {
     
-    var progress: CGFloat = 0.0
-    var lineWidth: CGFloat = 10
-    var ovalWidth: CGFloat = 10
-    var ovalColor = UIColor.yellow
-    var lineColor = UIColor.yellow
-    var duration: CGFloat = 10.0
+    public var progress: CGFloat = 0.0
+    public var lineWidth: CGFloat = 10
+    public var ovalWidth: CGFloat = 10
+    public var ovalColor = UIColor.yellow
+    public var lineColor = UIColor.yellow
+    public var duration: CGFloat = 1.0
     
     private var _animation: CABasicAnimation!
     private var _lineShapeLayer: CAShapeLayer?
     private var _ellipseShapeLayer: CAShapeLayer?
     
-    override func draw(_ rect: CGRect) {
+    override open func draw(_ rect: CGRect) {
         _ellipseShapeLayer?.removeFromSuperlayer()
         _lineShapeLayer?.removeFromSuperlayer()
         _setupEllipse(rect)
@@ -23,7 +23,7 @@ class SanuView: UIView {
         _setupAnimation()
     }
     
-    func animate() {
+    public func animate() {
         setNeedsDisplay()
     }
     
@@ -37,7 +37,7 @@ class SanuView: UIView {
         _ellipseShapeLayer?.add(_animation, forKey: "stroke")
     }
     
-    override func layerWillDraw(_ layer: CALayer) {
+    override open func layerWillDraw(_ layer: CALayer) {
         _ellipseShapeLayer?.removeFromSuperlayer()
         _lineShapeLayer?.removeFromSuperlayer()
     }
@@ -57,11 +57,9 @@ class SanuView: UIView {
         ellipseShapeLayer.strokeEnd = progress
         ellipseShapeLayer.fillColor = backgroundColor?.cgColor
         let transform = CGAffineTransform(rotationAngle: CGFloat( Double.pi/2))
-        
-        let transl = CGAffineTransform(translationX: 0, y: rect.height)
+        let transl = CGAffineTransform(translationX: rect.width, y: 0)
         ellipseShapeLayer.setAffineTransform(transform.concatenating(transl))
-        
-        ellipseShapeLayer.backgroundColor = backgroundColor?.cgColor
+        ellipseShapeLayer.backgroundColor = UIColor.red.cgColor
         _ellipseShapeLayer = ellipseShapeLayer
         layer.addSublayer(ellipseShapeLayer)
     }
