@@ -33,7 +33,7 @@ alfredthekkan, alfredthekkan01@gmail.com
 
 ## Screenshots
 
-![Alt text](/graph.png?raw=true "Graph")
+![Alt text](/graph.gif?raw=true "Graph")
 
 ## License
 
