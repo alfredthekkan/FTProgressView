@@ -20,9 +20,20 @@ it, simply add the following line to your Podfile:
 pod "FTProgressView"
 ```
 
+## How To Use
+```ruby
+let progressView        = SanuView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+progressView.progress   = 0.7
+progressView.animate()
+```
+
 ## Author
 
 alfredthekkan, alfredthekkan01@gmail.com
+
+## Screenshots
+
+![Alt text](/graph.png?raw=true "Graph")
 
 ## License
 
