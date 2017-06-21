@@ -35,6 +35,6 @@ alfredthekkan, alfredthekkan01@gmail.com
 
 ![Alt text](/graph.gif?raw=true "Graph")
 
-## License
+## License           
 
 FTProgressView is available under the MIT license. See the LICENSE file for more info.
